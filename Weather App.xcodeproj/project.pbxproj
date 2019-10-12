@@ -29,6 +29,10 @@
 		CEC3F81823522D4A00490A85 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3F81623522D4A00490A85 /* HomeTableViewCell.xib */; };
 		CEC3F81A23522F3500490A85 /* CLAlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81923522F3500490A85 /* CLAlertHandler.swift */; };
 		CEC3F820235231D900490A85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81F235231D900490A85 /* DetailViewController.swift */; };
+		CEC3F822235245E800490A85 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F821235245E800490A85 /* DetailPresenter.swift */; };
+		CEC3F8242352460000490A85 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8232352460000490A85 /* DetailInteractor.swift */; };
+		CEC3F8262352460E00490A85 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8252352460E00490A85 /* DetailRouter.swift */; };
+		CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8282352464A00490A85 /* DetailProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		CEC3F81623522D4A00490A85 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		CEC3F81923522F3500490A85 /* CLAlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAlertHandler.swift; sourceTree = "<group>"; };
 		CEC3F81F235231D900490A85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CEC3F821235245E800490A85 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		CEC3F8232352460000490A85 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		CEC3F8252352460E00490A85 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		CEC3F8282352464A00490A85 /* DetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +217,7 @@
 		CEC3F7E62351563300490A85 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F8272352463900490A85 /* Protocol */,
 				CEC3F7E72351563300490A85 /* Entity */,
 				CEC3F7E82351563300490A85 /* Presenter */,
 				CEC3F7E92351563300490A85 /* View */,
@@ -228,6 +237,7 @@
 		CEC3F7E82351563300490A85 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F821235245E800490A85 /* DetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -243,6 +253,7 @@
 		CEC3F7EA2351563300490A85 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F8232352460000490A85 /* DetailInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 		CEC3F7EB2351563300490A85 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F8252352460E00490A85 /* DetailRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -320,6 +332,14 @@
 				CEC3F80A2351729C00490A85 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CEC3F8272352463900490A85 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3F8282352464A00490A85 /* DetailProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +477,8 @@
 				CEC3F7F52351563300490A85 /* Weather_App.xcdatamodeld in Sources */,
 				CEC3F81423521E7800490A85 /* CLDateHandler.swift in Sources */,
 				CEC3F81723522D4A00490A85 /* HomeTableViewCell.swift in Sources */,
+				CEC3F8262352460E00490A85 /* DetailRouter.swift in Sources */,
+				CEC3F8242352460000490A85 /* DetailInteractor.swift in Sources */,
 				CEC3F8122352142400490A85 /* CoreDataHandler.swift in Sources */,
 				CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */,
 				CEC3F8092351725200490A85 /* Utility.swift in Sources */,
@@ -468,8 +490,10 @@
 				CEC3F7FF23515AD200490A85 /* HomeRouter.swift in Sources */,
 				CEC3F81A23522F3500490A85 /* CLAlertHandler.swift in Sources */,
 				CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */,
+				CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */,
 				CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */,
 				CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */,
+				CEC3F822235245E800490A85 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

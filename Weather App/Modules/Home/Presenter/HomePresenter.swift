@@ -30,6 +30,10 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func getRecentSearchResult() {
         interactor?.getRecentWeatherData()
     }
+    
+    func showDetailScreen(with searchData:SearchResult) {
+        view?.showWeatherDetailScreen(detailView: (router?.pushToDetailScreen(searchData: searchData))!)
+    }
 }
 
 extension HomePresenter : HomeInteractorToPresenterProtocol {

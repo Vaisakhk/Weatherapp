@@ -8,10 +8,6 @@
 
 import UIKit
 
-class HomeProtocol: NSObject {
-
-}
-
 protocol HomeViewToPresenterProtocol: class{
     
     var view: HomePresenterToViewProtocol? {get set}
@@ -21,16 +17,18 @@ protocol HomeViewToPresenterProtocol: class{
     func showDetailController(navigationController:UINavigationController)
     func updateViewStatus(for data :SearchResult)
     func getRecentSearchResult()
+    func showDetailScreen(with searchData:SearchResult)
 }
 
 protocol HomePresenterToViewProtocol: class{
     func showSearchResult(searchArray:[SearchResult])
     func showError(message:String)
+    func showWeatherDetailScreen(detailView:DetailViewController)
 }
 
 protocol HomePresenterToRouterProtocol: class {
     static func createModule()-> UINavigationController
-    static func pushToDetailScreen() -> UINavigationController
+    func pushToDetailScreen(searchData:SearchResult)-> DetailViewController
 }
 
 protocol HomePresenterToInteractorProtocol: class {

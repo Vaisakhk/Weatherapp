@@ -9,9 +9,8 @@
 import UIKit
 
 class HomeRouter: HomePresenterToRouterProtocol {
-   static func pushToDetailScreen() -> UINavigationController {
-         let view = mainstoryboard.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
-        return UINavigationController(rootViewController: view)
+    func pushToDetailScreen(searchData: SearchResult) -> DetailViewController {
+        return DetailRouter.createDetailModule(currentData: searchData)
     }
     
 

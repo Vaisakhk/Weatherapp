@@ -40,6 +40,10 @@ class ViewController: UIViewController {
 
 //MARK:- Call back Delegates from Presenter
 extension ViewController : HomePresenterToViewProtocol {
+    func showWeatherDetailScreen(detailView: DetailViewController) {
+         self.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
     func showSearchResult(searchArray: [SearchResult]) {
         if(searchArray.count != 0) {
             handleViewVisibility(isHideTableView: false)
@@ -75,6 +79,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.updateViewStatus(for: self.dataArray[indexPath.row])
+        presenter?.showDetailScreen(with: self.dataArray[indexPath.row])
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
