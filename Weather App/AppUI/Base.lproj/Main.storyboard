@@ -15,13 +15,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="gGv-pP-nAf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iAQ-lI-UW0"/>
+                                </connections>
+                            </searchBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLI-Y8-yjg">
+                                <rect key="frame" x="0.0" y="100" width="414" height="785"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-6t-3ui">
+                                <rect key="frame" x="152.5" y="443" width="109" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gGv-pP-nAf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="42i-VL-Tp0"/>
+                            <constraint firstItem="eKy-6t-3ui" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="O0y-ts-Ii9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLI-Y8-yjg" secondAttribute="trailing" id="Wrd-ap-Zga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cLI-Y8-yjg" secondAttribute="bottom" constant="-23" id="dZX-sl-GD9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gGv-pP-nAf" secondAttribute="trailing" id="gGS-II-lii"/>
+                            <constraint firstItem="cLI-Y8-yjg" firstAttribute="top" secondItem="gGv-pP-nAf" secondAttribute="bottom" id="lO7-Pg-01g"/>
+                            <constraint firstItem="gGv-pP-nAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mns-m8-mmf"/>
+                            <constraint firstItem="eKy-6t-3ui" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tF2-Uz-Gr4"/>
+                            <constraint firstItem="cLI-Y8-yjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xI2-vF-mUX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="gGv-pP-nAf" id="LWf-2d-Eqp"/>
+                        <outlet property="tableView" destination="cLI-Y8-yjg" id="wKO-Qv-A86"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="98"/>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </scene>
     </scenes>
 </document>

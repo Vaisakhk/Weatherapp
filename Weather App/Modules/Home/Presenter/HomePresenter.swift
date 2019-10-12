@@ -15,8 +15,8 @@ class HomePresenter: HomeViewToPresenterProtocol {
     
     var router: HomePresenterToRouterProtocol?
     
-    func startSearchingData() {
-        
+    func startSearchingData(searchString:String) {
+        interactor?.searchWeather(searchTerm: searchString)
     }
     
     func showDetailController(navigationController: UINavigationController) {
@@ -31,7 +31,7 @@ extension HomePresenter : HomeInteractorToPresenterProtocol {
         
     }
     
-    func weatherFetchFailed() {
+    func weatherFetchFailed(message:String) {
         
     }
     

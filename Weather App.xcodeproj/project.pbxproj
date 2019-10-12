@@ -20,6 +20,9 @@
 		CEC3F80223515BCA00490A85 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80123515BCA00490A85 /* HomeProtocol.swift */; };
 		CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80323515BDB00490A85 /* HomeInteractor.swift */; };
 		CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80523515BF300490A85 /* HomePresenter.swift */; };
+		CEC3F8092351725200490A85 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8082351725200490A85 /* Utility.swift */; };
+		CEC3F80B2351729C00490A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80A2351729C00490A85 /* Constants.swift */; };
+		CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80C2351807300490A85 /* URLGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		CEC3F80123515BCA00490A85 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		CEC3F80323515BDB00490A85 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CEC3F80523515BF300490A85 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CEC3F8082351725200490A85 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		CEC3F80A2351729C00490A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEC3F80C2351807300490A85 /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 				CEC3F7EC2351563300490A85 /* AppUI */,
 				CEC3F7DF2351563300490A85 /* DataBase */,
 				CEC3F7F12351563300490A85 /* AppAssets */,
+				CEC3F8072351722D00490A85 /* Helpers */,
 				CEC3F7892351518500490A85 /* Info.plist */,
 			);
 			path = "Weather App";
@@ -287,6 +294,16 @@
 			path = protocol;
 			sourceTree = "<group>";
 		};
+		CEC3F8072351722D00490A85 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3F80C2351807300490A85 /* URLGenerator.swift */,
+				CEC3F8082351725200490A85 /* Utility.swift */,
+				CEC3F80A2351729C00490A85 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,10 +437,13 @@
 			files = (
 				CEC3F7F52351563300490A85 /* Weather_App.xcdatamodeld in Sources */,
 				CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */,
+				CEC3F8092351725200490A85 /* Utility.swift in Sources */,
 				CEC3F7F62351563300490A85 /* ViewController.swift in Sources */,
 				CEC3F7F42351563300490A85 /* SceneDelegate.swift in Sources */,
+				CEC3F80B2351729C00490A85 /* Constants.swift in Sources */,
 				CEC3F80223515BCA00490A85 /* HomeProtocol.swift in Sources */,
 				CEC3F7FF23515AD200490A85 /* HomeRouter.swift in Sources */,
+				CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */,
 				CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */,
 				CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */,
 			);

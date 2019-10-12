@@ -21,7 +21,7 @@ class HomeRouter: HomePresenterToRouterProtocol {
         let interactor: HomePresenterToInteractorProtocol = HomeInteractor()
         let router:HomePresenterToRouterProtocol = HomeRouter()
         
-        view.presentor = presenter as? HomePresenterToViewProtocol
+        view.presenter = presenter
         presenter.view = view as HomePresenterToViewProtocol
         presenter.router = router
         presenter.interactor = interactor
