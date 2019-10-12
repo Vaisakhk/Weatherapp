@@ -34,19 +34,13 @@ extension DetailViewController : DetailPresenterToViewProtocol {
         weatherLabel.text = weather.weatherDescription
         temperatureLabel.text = weather.temperature
         humidityLabel.text = weather.humidity
-        do {
-            if let url = URL(string: weather.imageUrl) {
-                let imageData = try Data(contentsOf: url)
-                    weatherImageView.image = UIImage(data:imageData)
-            }
-        }catch{
-            
-        }
     }
 
     
     func showError(message: String) {
         
     }
-    
+    func displayImage(imageData: Data) {
+        weatherImageView.image = UIImage(data: imageData)
+    }
 }

@@ -20,6 +20,7 @@ protocol DetailViewToPresenterProtocol: class{
 protocol DetailPresenterToViewProtocol: class{
     func showWeatherResult(weather:WeatherResult)
     func showError(message:String)
+    func displayImage(imageData:Data)
 }
 
 protocol DetailPresenterToRouterProtocol: class {
@@ -35,4 +36,5 @@ protocol DetailPresenterToInteractorProtocol: class {
 protocol DetailInteractorToPresenterProtocol: class {
     func weatherFetchedSuccess(weatherReport:WeatherResult)
     func weatherFetchFailed(message:String)
+    func weatherImageDownloaded(data:Data)
 }

@@ -52,8 +52,11 @@ class DetailInteractor: DetailPresenterToInteractorProtocol {
                         let humidity:String? =  dataResult["humidity"] as? String
                         let temperature:String? =   dataResult["temp_C"] as? String
                         let observationTime:String? =   dataResult["observation_time"] as? String
+                        let weatherResult = WeatherResult(humidity: humidity ?? "",imageUrl: weatherIconUrl ?? "",weatherDescription: weatherDesc ?? "",temperature: temperature ?? "",observationTime: observationTime ?? "")
+                        downloadImage(urlString: weatherResult.imageUrl)
                         DispatchQueue.main.async { [weak self] in
-                            self?.presenter?.weatherFetchedSuccess(weatherReport: WeatherResult(humidity: humidity ?? "",imageUrl: weatherIconUrl ?? "",weatherDescription: weatherDesc ?? "",temperature: temperature ?? "",observationTime: observationTime ?? ""))
+                            self?.presenter?.weatherFetchedSuccess(weatherReport:weatherResult)
+                            
                         }
                     }
                 }
@@ -62,4 +65,28 @@ class DetailInteractor: DetailPresenterToInteractorProtocol {
             
         }
     }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(urlString :String) {
+        if let url = URL(string: urlString) {
+            getData(from: url) { data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async() {
+                    self.presenter?.weatherImageDownloaded(data:data)
+                }
+            }
+        }
+    }
+    
+    //        do {
+    //            if let url = URL(string: weather.imageUrl) {
+    //                let imageData = try Data(contentsOf: url)
+    //                    weatherImageView.image = UIImage(data:imageData)
+    //            }
+    //        }catch{
+    //
+    //        }
 }

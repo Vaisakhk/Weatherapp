@@ -23,9 +23,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         populateData()
     }
     
+    //MARK:- Populate data
     func populateData() {
         dataArray.removeAll()
         presenter?.getRecentSearchResult()

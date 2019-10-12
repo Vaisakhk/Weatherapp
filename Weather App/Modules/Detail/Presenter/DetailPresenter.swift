@@ -20,6 +20,10 @@ class DetailPresenter: DetailViewToPresenterProtocol {
 }
 
 extension DetailPresenter : DetailInteractorToPresenterProtocol {
+    func weatherImageDownloaded(data: Data) {
+        view?.displayImage(imageData: data)
+    }
+    
     func weatherFetchedSuccess(weatherReport: WeatherResult) {
         view?.showWeatherResult(weather: weatherReport)
     }
@@ -28,5 +32,4 @@ extension DetailPresenter : DetailInteractorToPresenterProtocol {
         view?.showError(message: message)
     }
     
-
 }
