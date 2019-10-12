@@ -18,7 +18,7 @@ protocol DetailViewToPresenterProtocol: class{
 }
 
 protocol DetailPresenterToViewProtocol: class{
-    func showSearchResult(searchArray:[SearchResult])
+    func showWeatherResult(weather:WeatherResult)
     func showError(message:String)
 }
 
@@ -33,7 +33,6 @@ protocol DetailPresenterToInteractorProtocol: class {
 }
 
 protocol DetailInteractorToPresenterProtocol: class {
-    func weatherFetchedSuccess(dateString:String)
+    func weatherFetchedSuccess(weatherReport:WeatherResult)
     func weatherFetchFailed(message:String)
-    func weatherDataResult(data:[SearchResult]?)
 }

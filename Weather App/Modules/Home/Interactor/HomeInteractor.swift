@@ -85,9 +85,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         let lattitude:String? = searchResult["latitude"] as? String
         let longitude:String? = searchResult["longitude"] as? String
         let population:String? = searchResult["population"] as? String
-        let areaName = getChildValue(dataValue: searchResult["areaName"] as? [[String : AnyObject]])
-        let countryName = getChildValue(dataValue: searchResult["country"] as? [[String : AnyObject]])
-        let regionName = getChildValue(dataValue: searchResult["region"] as? [[String : AnyObject]])
+        let areaName = Utility.sharedInstance.getChildValue(dataValue: searchResult["areaName"] as? [[String : AnyObject]])
+        let countryName = Utility.sharedInstance.getChildValue(dataValue: searchResult["country"] as? [[String : AnyObject]])
+        let regionName = Utility.sharedInstance.getChildValue(dataValue: searchResult["region"] as? [[String : AnyObject]])
         var searchResultData = checkSearchResultExist(area: areaName, country: countryName, region: regionName)
         if(searchResultData == nil) {
             searchResultData =   CoreDataHandler.sharedInstance.newEntityForName(entityName: "SearchResult") as? SearchResult
@@ -102,19 +102,6 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         searchResultData?.country =  countryName
         searchResultData?.region = regionName
         return searchResultData
-    }
-    
-    //MARK:- Get child value
-    func getChildValue(dataValue:[[String:AnyObject]]?) ->String {
-        var resultString = ""
-        if let tempData = dataValue {
-            for data in tempData {
-                if let tempString = data["value"] as? String {
-                    resultString = tempString
-                }
-            }
-        }
-        return resultString
     }
     
     //MARK:- Check Search results exist in local

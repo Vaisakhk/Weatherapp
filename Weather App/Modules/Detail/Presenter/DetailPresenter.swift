@@ -15,21 +15,17 @@ class DetailPresenter: DetailViewToPresenterProtocol {
     var router: DetailPresenterToRouterProtocol?
     
     func getWeatherReportData(by city: String) {
-        
+        interactor?.getCurrentWeatherData(by: city)
     }
 }
 
 extension DetailPresenter : DetailInteractorToPresenterProtocol {
-    func weatherFetchedSuccess(dateString: String) {
-        
+    func weatherFetchedSuccess(weatherReport: WeatherResult) {
+        view?.showWeatherResult(weather: weatherReport)
     }
     
     func weatherFetchFailed(message: String) {
-        
-    }
-    
-    func weatherDataResult(data: [SearchResult]?) {
-        
+        view?.showError(message: message)
     }
     
 

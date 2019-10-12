@@ -33,6 +33,7 @@
 		CEC3F8242352460000490A85 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8232352460000490A85 /* DetailInteractor.swift */; };
 		CEC3F8262352460E00490A85 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8252352460E00490A85 /* DetailRouter.swift */; };
 		CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8282352464A00490A85 /* DetailProtocol.swift */; };
+		CEC3F82B23524E4300490A85 /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F82A23524E4300490A85 /* WeatherResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		CEC3F8232352460000490A85 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		CEC3F8252352460E00490A85 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		CEC3F8282352464A00490A85 /* DetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocol.swift; sourceTree = "<group>"; };
+		CEC3F82A23524E4300490A85 /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		CEC3F7E72351563300490A85 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F82A23524E4300490A85 /* WeatherResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */,
 				CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */,
 				CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */,
+				CEC3F82B23524E4300490A85 /* WeatherResult.swift in Sources */,
 				CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */,
 				CEC3F822235245E800490A85 /* DetailPresenter.swift in Sources */,
 			);

@@ -18,6 +18,7 @@ class DetailRouter: DetailPresenterToRouterProtocol {
            let router:DetailPresenterToRouterProtocol = DetailRouter()
            
            view.presenter = presenter
+           view.searchResult = currentData
            presenter.view = view as DetailPresenterToViewProtocol
            presenter.router = router
            presenter.interactor = interactor
