@@ -193,11 +193,36 @@
                                     <constraint firstItem="oTA-Ji-9ce" firstAttribute="bottom" secondItem="vtu-IQ-yCd" secondAttribute="bottom" id="vFu-fD-FLE"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRE-cR-lbT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-J2-GTn">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                        <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait Weather Details are fetching.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPm-n8-iHb">
+                                        <rect key="frame" x="52" y="437.5" width="310.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Sab-J2-GTn" firstAttribute="centerX" secondItem="rRE-cR-lbT" secondAttribute="centerX" id="9ud-Dz-zqi"/>
+                                    <constraint firstItem="OPm-n8-iHb" firstAttribute="top" secondItem="Sab-J2-GTn" secondAttribute="bottom" constant="10" id="IoI-Lu-LVo"/>
+                                    <constraint firstItem="OPm-n8-iHb" firstAttribute="centerX" secondItem="Sab-J2-GTn" secondAttribute="centerX" id="PIZ-gZ-IMU"/>
+                                    <constraint firstItem="Sab-J2-GTn" firstAttribute="centerY" secondItem="rRE-cR-lbT" secondAttribute="centerY" id="V7c-CV-zWe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Rwo-1E-4ic" firstAttribute="bottom" secondItem="rRE-cR-lbT" secondAttribute="bottom" id="BxP-gm-tWb"/>
                             <constraint firstItem="Z6t-5l-8me" firstAttribute="top" secondItem="Rwo-1E-4ic" secondAttribute="top" constant="40" id="Gym-C3-tp9"/>
+                            <constraint firstItem="Rwo-1E-4ic" firstAttribute="trailing" secondItem="rRE-cR-lbT" secondAttribute="trailing" id="Hwz-yD-smY"/>
                             <constraint firstItem="Z6t-5l-8me" firstAttribute="leading" secondItem="Rwo-1E-4ic" secondAttribute="leading" id="IJp-RB-NQM"/>
+                            <constraint firstItem="rRE-cR-lbT" firstAttribute="top" secondItem="Rwo-1E-4ic" secondAttribute="top" id="JGH-GW-BgM"/>
                             <constraint firstItem="Wku-bE-otN" firstAttribute="trailing" secondItem="tlL-Bt-Qt1" secondAttribute="trailing" id="TNm-bR-7Kv"/>
                             <constraint firstItem="Rwo-1E-4ic" firstAttribute="trailing" secondItem="LZ3-LG-iOi" secondAttribute="trailing" id="WYH-IY-3qG"/>
                             <constraint firstItem="LZ3-LG-iOi" firstAttribute="top" secondItem="Z6t-5l-8me" secondAttribute="bottom" constant="30" id="buW-mz-ndV"/>
@@ -207,12 +232,15 @@
                             <constraint firstItem="tlL-Bt-Qt1" firstAttribute="leading" secondItem="LZ3-LG-iOi" secondAttribute="leading" id="lJO-0l-pHJ"/>
                             <constraint firstItem="Wku-bE-otN" firstAttribute="top" secondItem="tlL-Bt-Qt1" secondAttribute="bottom" constant="10" id="lWm-5F-yDw"/>
                             <constraint firstItem="Rwo-1E-4ic" firstAttribute="trailing" secondItem="Z6t-5l-8me" secondAttribute="trailing" id="noC-Ck-dM3"/>
+                            <constraint firstItem="rRE-cR-lbT" firstAttribute="leading" secondItem="Rwo-1E-4ic" secondAttribute="leading" id="riD-AV-bGC"/>
                             <constraint firstItem="tlL-Bt-Qt1" firstAttribute="trailing" secondItem="LZ3-LG-iOi" secondAttribute="trailing" id="vKt-EA-xld"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rwo-1E-4ic"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Sab-J2-GTn" id="tF6-eE-tEx"/>
                         <outlet property="humidityLabel" destination="KWf-jS-Oxz" id="6rk-4a-i0e"/>
+                        <outlet property="progressAnimationView" destination="rRE-cR-lbT" id="jjP-ii-bc9"/>
                         <outlet property="temperatureLabel" destination="pWj-uW-G9Y" id="yg7-3g-jnB"/>
                         <outlet property="weatherImageView" destination="Z6t-5l-8me" id="lbk-B3-j5x"/>
                         <outlet property="weatherLabel" destination="vtu-IQ-yCd" id="2NY-uX-6ye"/>

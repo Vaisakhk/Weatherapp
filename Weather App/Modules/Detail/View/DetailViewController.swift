@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressAnimationView: UIView!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -34,6 +36,8 @@ extension DetailViewController : DetailPresenterToViewProtocol {
         weatherLabel.text = weather.weatherDescription
         temperatureLabel.text = weather.temperature
         humidityLabel.text = weather.humidity
+        activityIndicator.stopAnimating()
+        progressAnimationView.isHidden = true
     }
 
     
