@@ -9,12 +9,17 @@
 import UIKit
 
 class HomeInteractor: HomePresenterToInteractorProtocol {
-    
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     var presenter: HomeInteractorToPresenterProtocol?
     
-    //MARK:- Search weather result
+    //MARK:- Search weather result from Local Db
+    func getWeatherData(by date: String) {
+        let predicate = NSPredicate(format: "createdDate == %@",date)
+        presenter?.weatherDataResult(data:  CoreDataHandler.sharedInstance.getAllDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "areaName", ascending: true)) as! [SearchResult])
+    }
+    
+    //MARK:- Search weather result From Api
     func searchWeather(searchTerm :String ) {
         dataTask?.cancel()
         let queryString = String(format: "search.ashx?query=%@&num_of_results=3&format=json&key=%@",searchTerm,Constants.APIKEY )

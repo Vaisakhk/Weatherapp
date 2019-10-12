@@ -35,9 +35,11 @@ protocol HomePresenterToRouterProtocol: class {
 protocol HomePresenterToInteractorProtocol: class {
     var presenter:HomeInteractorToPresenterProtocol? {get set}
     func searchWeather(searchTerm :String)
+    func getWeatherData(by date:String)
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
     func weatherFetchedSuccess(dateString:String)
     func weatherFetchFailed(message:String)
+    func weatherDataResult(data:[SearchResult])
 }

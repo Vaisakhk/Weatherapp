@@ -27,11 +27,13 @@ class HomePresenter: HomeViewToPresenterProtocol {
 }
 
 extension HomePresenter : HomeInteractorToPresenterProtocol {
-    func weatherFetchedSuccess(dateString: String) {
-        let predicate = NSPredicate(format: "createdDate == %@",dateString)
-         view?.showSearchResult(searchArray: CoreDataHandler.sharedInstance.getAllDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "createdDate", ascending: true)) as! [SearchResult])
+    func weatherDataResult(data: [SearchResult]) {
+        view?.showSearchResult(searchArray: data)
     }
-
+    
+    func weatherFetchedSuccess(dateString: String) {
+        interactor?.getWeatherData(by: dateString)
+    }
     
     func weatherFetchFailed(message:String) {
         view?.showError(message: message)

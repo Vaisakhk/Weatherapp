@@ -24,6 +24,11 @@ class ViewController: UIViewController {
         
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
+    
+    func populateData() {
+        dataArray.removeAll()
+        tableView.reloadData()
+    }
 }
 
 //MARK:- Call back Delegates from Presenter
@@ -58,7 +63,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
         let homeCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! HomeTableViewCell
             homeCell.tag = indexPath.row + 1000
         homeCell.populateData(searchData: self.dataArray[indexPath.row] )
-        return UITableViewCell()
+        return homeCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,13 +79,13 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if(searchBar.text?.count == 0) {
-            
+            populateData()
         }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         if(searchBar.text?.count == 0) {
-            
+            populateData()
         }else {
             presenter?.startSearchingData(searchString: searchBar.text ?? "")
         }
@@ -88,7 +93,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0) {
-            //populateData()
+            populateData()
         }else {
             
         }

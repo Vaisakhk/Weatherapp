@@ -4,12 +4,13 @@
         <attribute name="areaName" optional="YES" attributeType="String"/>
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="createdDate" optional="YES" attributeType="String"/>
+        <attribute name="isViewed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
         <attribute name="population" optional="YES" attributeType="String"/>
         <attribute name="region" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SearchResult" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="SearchResult" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>
