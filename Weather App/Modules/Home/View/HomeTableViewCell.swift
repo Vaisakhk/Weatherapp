@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var numberOfViewsLabel: UILabel!
     @IBOutlet weak var areaNameLabel: UILabel!
     
     //MARK:- UIView Life Cycle
@@ -25,7 +26,11 @@ class HomeTableViewCell: UITableViewCell {
     //MARK:- UIView populate data
     func populateData(searchData:SearchResult) {
         areaNameLabel.text = searchData.areaName
-        print("name == " + (searchData.areaName ?? "NO AREA"))
+        if(searchData.numberOfViews == 0) {
+        numberOfViewsLabel.text = "No views"
+        }else {
+            numberOfViewsLabel.text = searchData.numberOfViews == 1 ? String(format: "%d View", searchData.numberOfViews) : String(format: "%d Views", searchData.numberOfViews)
+        }
     }
     
 }

@@ -23,24 +23,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        populateData()
     }
     
     func populateData() {
         dataArray.removeAll()
+        presenter?.getRecentSearchResult()
         tableView.reloadData()
+    }
+    
+    func handleViewVisibility(isHideTableView:Bool) {
+        noDataLabel.isHidden = !isHideTableView
+        tableView.isHidden = isHideTableView
     }
 }
 
 //MARK:- Call back Delegates from Presenter
 extension ViewController : HomePresenterToViewProtocol {
     func showSearchResult(searchArray: [SearchResult]) {
-        print(searchArray)
         if(searchArray.count != 0) {
-            noDataLabel.isHidden = true
-            tableView.isHidden = false
+            handleViewVisibility(isHideTableView: false)
         }else {
-            noDataLabel.isHidden = false
-            tableView.isHidden = true
+            handleViewVisibility(isHideTableView: true)
         }
         dataArray = searchArray
         tableView.reloadData()
@@ -70,7 +74,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter?.updateViewStatus(for: self.dataArray[indexPath.row])
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

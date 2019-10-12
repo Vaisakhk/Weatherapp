@@ -23,12 +23,18 @@ class HomePresenter: HomeViewToPresenterProtocol {
         
     }
     
+    func updateViewStatus(for data :SearchResult) {
+        interactor?.updateIsViewStatus(for: data)
+    }
 
+    func getRecentSearchResult() {
+        interactor?.getRecentWeatherData()
+    }
 }
 
 extension HomePresenter : HomeInteractorToPresenterProtocol {
-    func weatherDataResult(data: [SearchResult]) {
-        view?.showSearchResult(searchArray: data)
+    func weatherDataResult(data: [SearchResult]?) {
+        view?.showSearchResult(searchArray: data ?? [])
     }
     
     func weatherFetchedSuccess(dateString: String) {

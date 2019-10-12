@@ -229,7 +229,23 @@ public func getMaxOfDatas(entity:String,property:String,predicate:NSPredicate?)-
         return resultData
     }
     
-    
+    @objc public func getlimitedDatasWithPredicate(entity:String,predicate:NSPredicate?, sortDescriptor: NSSortDescriptor?,limit:Int)-> [AnyObject] {
+        let fetchRequest : NSFetchRequest = NSFetchRequest<NSFetchRequestResult> (entityName: entity)
+        var resultData:[AnyObject] = []
+        if(predicate != nil) {
+            fetchRequest.predicate = predicate
+        }
+        if(sortDescriptor != nil) {
+            fetchRequest.sortDescriptors = [sortDescriptor!]
+        }
+        fetchRequest.fetchLimit = limit
+        do {
+            resultData =  try self.managedObjectContext!.fetch(fetchRequest) as [AnyObject]
+        }catch {
+            print(error)
+        }
+        return resultData
+    }
     
     // MARK: -To Delete a managed object.
    @objc public func deleteObject(object:NSManagedObject) ->Void {

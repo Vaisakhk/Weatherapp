@@ -16,7 +16,21 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     //MARK:- Search weather result from Local Db
     func getWeatherData(by date: String) {
         let predicate = NSPredicate(format: "createdDate == %@",date)
-        presenter?.weatherDataResult(data:  CoreDataHandler.sharedInstance.getAllDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "areaName", ascending: true)) as! [SearchResult])
+        presenter?.weatherDataResult(data:  CoreDataHandler.sharedInstance.getAllDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "areaName", ascending: true)) as? [SearchResult])
+    }
+    
+    //MARK:- Update isView status
+    func updateIsViewStatus(for weatherData :SearchResult) {
+        weatherData.isViewed = true
+        weatherData.numberOfViews =  weatherData.numberOfViews + 1
+        weatherData.createdDate = CLDateHandler.sharedHandlerInsatnce.convertDateToFormatedString(currentDate: Date(), formatedString: Constants.TIMEFORMAT, timezone: TimeZone.current)
+        CoreDataHandler.sharedInstance.saveContext()
+    }
+    
+    //MARK:- Get Recent Weather Data
+    func getRecentWeatherData() {
+        let predicate = NSPredicate(format: "isViewed = true")
+        presenter?.weatherDataResult(data:  CoreDataHandler.sharedInstance.getlimitedDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "createdDate", ascending: false), limit: 10) as? [SearchResult])
     }
     
     //MARK:- Search weather result From Api
@@ -71,17 +85,22 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         let lattitude:String? = searchResult["latitude"] as? String
         let longitude:String? = searchResult["longitude"] as? String
         let population:String? = searchResult["population"] as? String
-        var searchResultData = checkSearchResultExist(latValueValue: lattitude ?? "", longitudeValue: longitude ?? "")
+        let areaName = getChildValue(dataValue: searchResult["areaName"] as? [[String : AnyObject]])
+        let countryName = getChildValue(dataValue: searchResult["country"] as? [[String : AnyObject]])
+        let regionName = getChildValue(dataValue: searchResult["region"] as? [[String : AnyObject]])
+        var searchResultData = checkSearchResultExist(area: areaName, country: countryName, region: regionName)
         if(searchResultData == nil) {
             searchResultData =   CoreDataHandler.sharedInstance.newEntityForName(entityName: "SearchResult") as? SearchResult
+            searchResultData?.isViewed = false
+            searchResultData?.numberOfViews = 0
         }
         searchResultData?.latitude = lattitude
         searchResultData?.latitude = longitude
         searchResultData?.createdDate = date
         searchResultData?.population = population
-        searchResultData?.areaName = getChildValue(dataValue: searchResult["areaName"] as? [[String : AnyObject]])
-        searchResultData?.country =  getChildValue(dataValue: searchResult["country"] as? [[String : AnyObject]])
-        searchResultData?.region = getChildValue(dataValue: searchResult["region"] as? [[String : AnyObject]])
+        searchResultData?.areaName = areaName
+        searchResultData?.country =  countryName
+        searchResultData?.region = regionName
         return searchResultData
     }
     
@@ -99,8 +118,8 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     }
     
     //MARK:- Check Search results exist in local
-    func checkSearchResultExist(latValueValue:String,longitudeValue:String) -> SearchResult? {
-        let predicate = NSPredicate(format: "latitude == %@ && longitude == %@",latValueValue,longitudeValue)
+    func checkSearchResultExist(area:String,country:String,region:String) -> SearchResult? {
+        let predicate = NSPredicate(format: "areaName == %@ && country == %@ && region == %@",area,country,region)
         if let result = CoreDataHandler.sharedInstance.getAllDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "createdDate", ascending: true)) as? [SearchResult] {
             if(result.count == 0) {
                 return nil

@@ -7,10 +7,11 @@
         <attribute name="isViewed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
+        <attribute name="numberOfViews" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="population" optional="YES" attributeType="String"/>
         <attribute name="region" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SearchResult" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="SearchResult" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>

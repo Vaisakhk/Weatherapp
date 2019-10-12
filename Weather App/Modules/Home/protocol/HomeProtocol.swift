@@ -19,7 +19,8 @@ protocol HomeViewToPresenterProtocol: class{
     var router: HomePresenterToRouterProtocol? {get set}
     func startSearchingData(searchString :String)
     func showDetailController(navigationController:UINavigationController)
-
+    func updateViewStatus(for data :SearchResult)
+    func getRecentSearchResult()
 }
 
 protocol HomePresenterToViewProtocol: class{
@@ -29,17 +30,19 @@ protocol HomePresenterToViewProtocol: class{
 
 protocol HomePresenterToRouterProtocol: class {
     static func createModule()-> UINavigationController
-    static func pushToDetailScreen() -> UINavigationController 
+    static func pushToDetailScreen() -> UINavigationController
 }
 
 protocol HomePresenterToInteractorProtocol: class {
     var presenter:HomeInteractorToPresenterProtocol? {get set}
     func searchWeather(searchTerm :String)
     func getWeatherData(by date:String)
+    func updateIsViewStatus(for weatherData :SearchResult)
+    func getRecentWeatherData()
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
     func weatherFetchedSuccess(dateString:String)
     func weatherFetchFailed(message:String)
-    func weatherDataResult(data:[SearchResult])
+    func weatherDataResult(data:[SearchResult]?)
 }
