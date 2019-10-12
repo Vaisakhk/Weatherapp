@@ -13,4 +13,5 @@ struct Constants {
     
     static let BASEURL =  "http://api.worldweatheronline.com/premium/v1/"
     static let APIKEY =  "2b4d0bc9a6b6446897c85954191110"
+    static let TIMEFORMAT =  "yyyy-MM-dd'T'HH:mm:ss.SSS"
 }

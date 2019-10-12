@@ -23,13 +23,13 @@ protocol HomeViewToPresenterProtocol: class{
 }
 
 protocol HomePresenterToViewProtocol: class{
-    func showSearchResult(searchArray:Array<NSObject>)
-    func showError()
+    func showSearchResult(searchArray:[SearchResult])
+    func showError(message:String)
 }
 
 protocol HomePresenterToRouterProtocol: class {
-    static func createModule()-> ViewController
-    func pushToDetailScreen(navigationConroller:UINavigationController)
+    static func createModule()-> UINavigationController
+    static func pushToDetailScreen() -> UINavigationController 
 }
 
 protocol HomePresenterToInteractorProtocol: class {
@@ -38,6 +38,6 @@ protocol HomePresenterToInteractorProtocol: class {
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
-    func weatherFetchedSuccess(searchModelArray:Array<NSObject>)
+    func weatherFetchedSuccess(dateString:String)
     func weatherFetchFailed(message:String)
 }

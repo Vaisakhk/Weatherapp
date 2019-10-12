@@ -23,6 +23,12 @@
 		CEC3F8092351725200490A85 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8082351725200490A85 /* Utility.swift */; };
 		CEC3F80B2351729C00490A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80A2351729C00490A85 /* Constants.swift */; };
 		CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80C2351807300490A85 /* URLGenerator.swift */; };
+		CEC3F8122352142400490A85 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8112352142400490A85 /* CoreDataHandler.swift */; };
+		CEC3F81423521E7800490A85 /* CLDateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81323521E7700490A85 /* CLDateHandler.swift */; };
+		CEC3F81723522D4A00490A85 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81523522D4A00490A85 /* HomeTableViewCell.swift */; };
+		CEC3F81823522D4A00490A85 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC3F81623522D4A00490A85 /* HomeTableViewCell.xib */; };
+		CEC3F81A23522F3500490A85 /* CLAlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81923522F3500490A85 /* CLAlertHandler.swift */; };
+		CEC3F820235231D900490A85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F81F235231D900490A85 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		CEC3F8082351725200490A85 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		CEC3F80A2351729C00490A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC3F80C2351807300490A85 /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
+		CEC3F8112352142400490A85 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		CEC3F81323521E7700490A85 /* CLDateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLDateHandler.swift; sourceTree = "<group>"; };
+		CEC3F81523522D4A00490A85 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		CEC3F81623522D4A00490A85 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		CEC3F81923522F3500490A85 /* CLAlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAlertHandler.swift; sourceTree = "<group>"; };
+		CEC3F81F235231D900490A85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		CEC3F7DF2351563300490A85 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F8112352142400490A85 /* CoreDataHandler.swift */,
 				CEC3F7E02351563300490A85 /* Weather_App.xcdatamodeld */,
 			);
 			path = DataBase;
@@ -187,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC3F7E52351563300490A85 /* ViewController.swift */,
+				CEC3F81523522D4A00490A85 /* HomeTableViewCell.swift */,
+				CEC3F81623522D4A00490A85 /* HomeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +235,7 @@
 		CEC3F7E92351563300490A85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F81F235231D900490A85 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +313,8 @@
 		CEC3F8072351722D00490A85 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3F81923522F3500490A85 /* CLAlertHandler.swift */,
+				CEC3F81323521E7700490A85 /* CLDateHandler.swift */,
 				CEC3F80C2351807300490A85 /* URLGenerator.swift */,
 				CEC3F8082351725200490A85 /* Utility.swift */,
 				CEC3F80A2351729C00490A85 /* Constants.swift */,
@@ -410,6 +428,7 @@
 			files = (
 				CEC3F7F72351563300490A85 /* LaunchScreen.storyboard in Resources */,
 				CEC3F7F92351563300490A85 /* Assets.xcassets in Resources */,
+				CEC3F81823522D4A00490A85 /* HomeTableViewCell.xib in Resources */,
 				CEC3F7F82351563300490A85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,13 +455,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC3F7F52351563300490A85 /* Weather_App.xcdatamodeld in Sources */,
+				CEC3F81423521E7800490A85 /* CLDateHandler.swift in Sources */,
+				CEC3F81723522D4A00490A85 /* HomeTableViewCell.swift in Sources */,
+				CEC3F8122352142400490A85 /* CoreDataHandler.swift in Sources */,
 				CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */,
 				CEC3F8092351725200490A85 /* Utility.swift in Sources */,
 				CEC3F7F62351563300490A85 /* ViewController.swift in Sources */,
+				CEC3F820235231D900490A85 /* DetailViewController.swift in Sources */,
 				CEC3F7F42351563300490A85 /* SceneDelegate.swift in Sources */,
 				CEC3F80B2351729C00490A85 /* Constants.swift in Sources */,
 				CEC3F80223515BCA00490A85 /* HomeProtocol.swift in Sources */,
 				CEC3F7FF23515AD200490A85 /* HomeRouter.swift in Sources */,
+				CEC3F81A23522F3500490A85 /* CLAlertHandler.swift in Sources */,
 				CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */,
 				CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */,
 				CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */,

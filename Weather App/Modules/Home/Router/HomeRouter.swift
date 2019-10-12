@@ -9,12 +9,13 @@
 import UIKit
 
 class HomeRouter: HomePresenterToRouterProtocol {
-    func pushToDetailScreen(navigationConroller: UINavigationController) {
-        
+   static func pushToDetailScreen() -> UINavigationController {
+         let view = mainstoryboard.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        return UINavigationController(rootViewController: view)
     }
     
 
-    static func createModule() -> ViewController {
+    static func createModule() -> UINavigationController {
         let view = mainstoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         
         let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter()
@@ -26,8 +27,7 @@ class HomeRouter: HomePresenterToRouterProtocol {
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
-        
-        return view
+        return UINavigationController(rootViewController: view)
     }
     
     static var mainstoryboard: UIStoryboard{
