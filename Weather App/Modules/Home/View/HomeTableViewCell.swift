@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var numberOfViewsLabel: UILabel!
     @IBOutlet weak var areaNameLabel: UILabel!
     
@@ -26,6 +27,8 @@ class HomeTableViewCell: UITableViewCell {
     //MARK:- UIView populate data
     func populateData(searchData:SearchResult) {
         areaNameLabel.text = searchData.areaName
+        countryLabel.text = searchData.country
+        regionLabel.text = searchData.region
         if(searchData.numberOfViews == 0) {
         numberOfViewsLabel.text = "No views"
         }else {

@@ -9,11 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var presenter:HomeViewToPresenterProtocol?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     lazy var dataArray : [SearchResult] = {
         return []
     }()
@@ -26,7 +28,9 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        populateData()
+        if(searchBar.text?.count == 0) {
+            populateData()
+        }
     }
     
     //MARK:- Populate data
@@ -39,6 +43,17 @@ class ViewController: UIViewController {
     func handleViewVisibility(isHideTableView:Bool) {
         noDataLabel.isHidden = !isHideTableView
         tableView.isHidden = isHideTableView
+    }
+    
+//MARK:- Progress view Handling
+    func showProgressView() {
+        progressView.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func hideProgressView() {
+        activityIndicator.stopAnimating()
+        progressView.isHidden = true
     }
 }
 
@@ -56,6 +71,7 @@ extension ViewController : HomePresenterToViewProtocol {
         }
         dataArray = searchArray
         tableView.reloadData()
+        hideProgressView()
     }
     
     func showError(message:String) {
@@ -100,6 +116,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
         if(searchBar.text?.count == 0) {
             populateData()
         }else {
+            showProgressView()
             presenter?.startSearchingData(searchString: searchBar.text ?? "")
         }
     }
@@ -107,6 +124,7 @@ extension ViewController : UISearchBarDelegate,UITableViewDelegate,UITableViewDa
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0) {
             populateData()
+            self.view.endEditing(true)
         }else {
             
         }
