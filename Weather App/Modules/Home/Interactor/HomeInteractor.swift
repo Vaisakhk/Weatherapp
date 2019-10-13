@@ -44,8 +44,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
                         self?.dataTask = nil
                     }
                     if let error = error {
-                        print(error)
-                        self?.presenter?.weatherFetchFailed(message: error.localizedDescription)
+                        DispatchQueue.main.async {
+                            self?.presenter?.weatherFetchFailed(message: error.localizedDescription)
+                        }
                     }else if
                         let data = data,
                         let response = response as? HTTPURLResponse,

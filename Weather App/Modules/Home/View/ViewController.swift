@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var presenter:HomeViewToPresenterProtocol?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var presenter:HomeViewToPresenterProtocol?
     lazy var dataArray : [SearchResult] = {
         return []
     }()
@@ -40,12 +40,12 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
+    //MARK:- Handle view Visibility
     func handleViewVisibility(isHideTableView:Bool) {
         noDataLabel.isHidden = !isHideTableView
         tableView.isHidden = isHideTableView
     }
     
-//MARK:- Progress view Handling
     func showProgressView() {
         progressView.isHidden = false
         activityIndicator.startAnimating()
@@ -75,6 +75,7 @@ extension ViewController : HomePresenterToViewProtocol {
     }
     
     func showError(message:String) {
+        hideProgressView()
         CLAlertHandler.sharedHandlerInsatnce.showAlert(alertMessage: message, title: Constants.appName, contoller: self) { (isSuccess) in
             
         }

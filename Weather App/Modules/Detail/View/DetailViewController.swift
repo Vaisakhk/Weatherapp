@@ -10,12 +10,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var progressAnimationView: UIView!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
+    @IBOutlet weak var progressAnimationView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var searchResult:SearchResult?
     var presenter:DetailViewToPresenterProtocol?
@@ -27,6 +27,15 @@ class DetailViewController: UIViewController {
         presenter?.getWeatherReportData(by: searchResult?.areaName ?? "")
     }
 
+    func showProgressView() {
+           progressAnimationView.isHidden = false
+           activityIndicator.startAnimating()
+       }
+       
+       func hideProgressView() {
+           activityIndicator.stopAnimating()
+           progressAnimationView.isHidden = true
+       }
 }
 
 //MARK:- Call back Delegates from Presenter
@@ -36,14 +45,16 @@ extension DetailViewController : DetailPresenterToViewProtocol {
         weatherLabel.text = weather.weatherDescription
         temperatureLabel.text = weather.temperature
         humidityLabel.text = weather.humidity
-        activityIndicator.stopAnimating()
-        progressAnimationView.isHidden = true
+        hideProgressView()
     }
 
-    
     func showError(message: String) {
-        
+        CLAlertHandler.sharedHandlerInsatnce.showAlert(alertMessage: message, title: Constants.appName, contoller: self) { (isSuccess) in
+            self.navigationController?.popViewController(animated: true)
+        }
+         hideProgressView()
     }
+    
     func displayImage(imageData: Data) {
         weatherImageView.image = UIImage(data: imageData)
     }
