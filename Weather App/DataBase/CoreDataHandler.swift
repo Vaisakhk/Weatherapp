@@ -156,4 +156,9 @@ public class CoreDataHandler: NSObject {
         }
         return resultData
     }
+     // MARK: -To Delete a managed object.
+    @objc public func deleteObject(object:NSManagedObject) ->Void {
+         self.managedObjectContext?.delete(object)
+     }
+
 }

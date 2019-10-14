@@ -29,7 +29,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     
     //MARK:- Get Recent Weather Data
     func getRecentWeatherData() {
-        let predicate = NSPredicate(format: "isViewed = true")
+        let predicate = NSPredicate(format: "isViewed = true && areaName != %@","")
         presenter?.weatherDataResult(data:  CoreDataHandler.sharedInstance.getlimitedDatasWithPredicate(entity: "SearchResult", predicate: predicate, sortDescriptor: NSSortDescriptor(key: "createdDate", ascending: false), limit: 10) as? [SearchResult])
     }
     

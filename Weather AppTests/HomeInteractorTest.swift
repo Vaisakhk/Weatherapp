@@ -24,6 +24,7 @@ class HomeInteractorTest: XCTestCase {
             XCTAssertNotNil(data)
             for tempdata in data ?? [] {
                 XCTAssertEqual(tempdata.createdDate , "2019-10-13'T'13:10:10.011")
+                CoreDataHandler.sharedInstance.deleteObject(object: tempdata)
             }
         }
     }
@@ -37,7 +38,7 @@ class HomeInteractorTest: XCTestCase {
     }
     
     override func tearDown() {
-        
+         interactor?.getWeatherData(by: "2019-10-13'T'13:10:10.011")
     }
     
     //MARK:- Test Get Weather Data
@@ -51,6 +52,7 @@ class HomeInteractorTest: XCTestCase {
         interactor?.updateIsViewStatus(for: searchData)
         XCTAssertEqual(searchData.isViewed, true)
         XCTAssert(searchData.isViewed)
+        
     }
     
     //MARK:- Test Search Weather
