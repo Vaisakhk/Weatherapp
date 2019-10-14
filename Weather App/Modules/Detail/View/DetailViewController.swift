@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
         presenter?.getWeatherReportData(by: searchResult?.areaName ?? "")
     }
 
+    //MARK:- Handle view Visibility
     func showProgressView() {
            progressAnimationView.isHidden = false
            activityIndicator.startAnimating()

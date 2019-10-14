@@ -10,12 +10,20 @@ import UIKit
 
 
 @objc class URLGenerator: NSObject {
-    
     @objc public static let sharedInstance = URLGenerator()
     @objc enum URLTYPE:Int {
         case URLTYPESEARCH = 1
         case URLTYPEWEATHERDETAIL = 2
     }
+
+    /**
+     *  Get Service URL
+     *
+     *  @param type  : Type of servise we are calling
+     *    parameters : Any additional URL encoded parameters
+     *  @return           : URL created with requirment
+     *
+     */
 
     @objc func urlWithType(type:URLTYPE,parameters:String?)-> URL {
         var urlString:String = ""
@@ -26,8 +34,6 @@ import UIKit
         case .URLTYPEWEATHERDETAIL:
             urlString = Constants.BASEURL + (parameters ?? "")
         }
-        
-        print(urlString)
         return URL.init(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
     }
     

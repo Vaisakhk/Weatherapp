@@ -33,9 +33,6 @@ class DetailInteractor: DetailPresenterToInteractorProtocol {
                         let response = response as? HTTPURLResponse,
                         response.statusCode == 200 {
                         self?.processWeatherResult(resultData: data)
-                        DispatchQueue.main.async {
-//                            self?.presenter?.weatherFetchedSuccess(dateString: date)
-                        }
                     }
             }
             dataTask?.resume()
