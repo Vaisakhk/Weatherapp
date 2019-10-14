@@ -42,7 +42,7 @@ class DetailInteractor: DetailPresenterToInteractorProtocol {
     }
     
         //MARK:- Process the weather result
-    fileprivate func processWeatherResult(resultData:Data) {
+     func processWeatherResult(resultData:Data) {
         do {
             if let result:[String:[String:[[String:AnyObject]]]] =  try JSONSerialization.jsonObject(with: resultData, options: JSONSerialization.ReadingOptions.allowFragments) as? [String:[String:[[String:AnyObject]]]] {
                 if let data =  result["data"]?["current_condition"] {
@@ -80,13 +80,4 @@ class DetailInteractor: DetailPresenterToInteractorProtocol {
             }
         }
     }
-    
-    //        do {
-    //            if let url = URL(string: weather.imageUrl) {
-    //                let imageData = try Data(contentsOf: url)
-    //                    weatherImageView.image = UIImage(data:imageData)
-    //            }
-    //        }catch{
-    //
-    //        }
 }

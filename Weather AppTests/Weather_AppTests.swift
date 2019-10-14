@@ -12,23 +12,27 @@ import XCTest
 class Weather_AppTests: XCTestCase {
 
     override func setUp() {
-
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUtilityChildValue() {
+        XCTAssertNotNil(Utility.sharedInstance.getChildValue(dataValue: nil))
+        XCTAssertEqual(Utility.sharedInstance.getChildValue(dataValue: nil)  , "")
+        let data:[[String : String]] = [["value":"Test Value"]]
+        XCTAssertEqual(Utility.sharedInstance.getChildValue(dataValue: data as [[String : AnyObject]])  , "Test Value")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testCLDateHandler() {
+        let currentDate = Date()
+        
+        let dateString = CLDateHandler.sharedHandlerInsatnce.convertDateToFormatedString(currentDate: currentDate, formatedString: Constants.TIMEFORMAT, timezone: TimeZone.current)
+        let date = CLDateHandler.sharedHandlerInsatnce.convertToDateCorespondingTo(dateString: dateString, formatedString: Constants.TIMEFORMAT, timezone: TimeZone.current)
+        
+        let tempString = CLDateHandler.sharedHandlerInsatnce.convertDateToFormatedString(currentDate: date!, formatedString: Constants.TIMEFORMAT, timezone: TimeZone.current)
+        XCTAssertEqual(tempString, dateString)
     }
 
 }

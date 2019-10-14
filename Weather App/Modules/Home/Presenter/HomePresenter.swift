@@ -19,9 +19,6 @@ class HomePresenter: HomeViewToPresenterProtocol {
         interactor?.searchWeather(searchTerm: searchString)
     }
     
-    func showDetailController(navigationController: UINavigationController) {
-        
-    }
     
     func updateViewStatus(for data :SearchResult) {
         interactor?.updateIsViewStatus(for: data)

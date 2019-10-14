@@ -14,7 +14,6 @@ protocol HomeViewToPresenterProtocol: class{
     var interactor: HomePresenterToInteractorProtocol? {get set}
     var router: HomePresenterToRouterProtocol? {get set}
     func startSearchingData(searchString :String)
-    func showDetailController(navigationController:UINavigationController)
     func updateViewStatus(for data :SearchResult)
     func getRecentSearchResult()
     func showDetailScreen(with searchData:SearchResult)

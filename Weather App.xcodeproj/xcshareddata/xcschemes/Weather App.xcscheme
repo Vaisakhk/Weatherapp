@@ -49,6 +49,26 @@
                ReferencedContainer = "container:Weather App.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE8E3EC02354AB5F00F1B813"
+               BuildableName = "HomeRouterTest.xctest"
+               BlueprintName = "HomeRouterTest"
+               ReferencedContainer = "container:Weather App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE8E3ECE2354AB6800F1B813"
+               BuildableName = "DetailRouterTest.xctest"
+               BlueprintName = "DetailRouterTest"
+               ReferencedContainer = "container:Weather App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

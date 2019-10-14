@@ -30,20 +30,6 @@ public class CLDateHandler: NSObject {
     }
     
     /**
-     *  To get time stamp from date
-     *
-     *  @param date : date that we need to convert
-     *
-     *  @return     : Time stamp
-     *
-     */
-
-    
-   @objc public func createTimeStampFor(date:Date) -> NSNumber {
-        return NSNumber(value: date.timeIntervalSince1970)
-    }
-    
-    /**
      *  Convert string to NSDate format
      *
      *  @param dateString  : String that we need to convert
@@ -60,31 +46,4 @@ public class CLDateHandler: NSObject {
         return dateFormatter.date(from: dateString)
     }
     
-    /**
-     *  Compare two dates
-     *
-     *  @param fromDateTime : first Date
-     *            toDateTime: Second Date
-     *
-     *  @return            : NSDateComponents object that gives all information about date difference
-     *
-     */
-    
-   @objc public func compareDates(fromDateTime:Date,toDateTime:Date) -> DateComponents {
-        let calendar = Calendar.current
-        return  calendar.dateComponents([.day,.month,.year,.hour,.minute,.second,.weekday,.weekdayOrdinal], from: fromDateTime, to: toDateTime)
-    }
-    
-    /**
-     *  Get date
-     *
-     *  @param fromDate : From Date
-     *         unit     : Unit to be added
-     *
-     *  @return         : Date by adding unit to the from date
-     *
-     */
-    public func getDate(from date:Date, byAdding unit:Int) -> Date {
-        return Calendar.current.date(byAdding: .day, value: unit, to: date)!
-    }
 }

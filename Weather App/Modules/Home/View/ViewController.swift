@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         if(searchBar.text?.count == 0) {
             populateData()
         }
+        tableView.reloadData()
     }
     
     //MARK:- Populate data

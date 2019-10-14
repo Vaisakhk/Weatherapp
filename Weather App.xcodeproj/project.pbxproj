@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3B1B2523548474009008DC /* DetailIneractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B1B2423548474009008DC /* DetailIneractorTest.swift */; };
+		CE8E3EDE2354ACFD00F1B813 /* HomeRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EDD2354ACFD00F1B813 /* HomeRouterTest.swift */; };
+		CE8E3EE02354AD0B00F1B813 /* DetailRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EDF2354AD0B00F1B813 /* DetailRouterTest.swift */; };
+		CE8E3EE22354AFD100F1B813 /* HomePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EE12354AFD100F1B813 /* HomePresenterTest.swift */; };
+		CE8E3EE42354B7D100F1B813 /* DetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EE32354B7D100F1B813 /* DetailPresenterTest.swift */; };
 		CEC3F7932351518500490A85 /* Weather_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7922351518500490A85 /* Weather_AppTests.swift */; };
 		CEC3F79E2351518500490A85 /* Weather_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F79D2351518500490A85 /* Weather_AppUITests.swift */; };
 		CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7DD2351563300490A85 /* AppDelegate.swift */; };
@@ -34,6 +39,7 @@
 		CEC3F8262352460E00490A85 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8252352460E00490A85 /* DetailRouter.swift */; };
 		CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8282352464A00490A85 /* DetailProtocol.swift */; };
 		CEC3F82B23524E4300490A85 /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F82A23524E4300490A85 /* WeatherResult.swift */; };
+		CEFA69512352F6AA00455AB6 /* HomeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA69502352F6AA00455AB6 /* HomeInteractorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3B1B2423548474009008DC /* DetailIneractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIneractorTest.swift; sourceTree = "<group>"; };
+		CE8E3EDD2354ACFD00F1B813 /* HomeRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTest.swift; sourceTree = "<group>"; };
+		CE8E3EDF2354AD0B00F1B813 /* DetailRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterTest.swift; sourceTree = "<group>"; };
+		CE8E3EE12354AFD100F1B813 /* HomePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTest.swift; sourceTree = "<group>"; };
+		CE8E3EE32354B7D100F1B813 /* DetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTest.swift; sourceTree = "<group>"; };
 		CEC3F7752351518100490A85 /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC3F7892351518500490A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC3F78E2351518500490A85 /* Weather AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +98,7 @@
 		CEC3F8252352460E00490A85 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		CEC3F8282352464A00490A85 /* DetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProtocol.swift; sourceTree = "<group>"; };
 		CEC3F82A23524E4300490A85 /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
+		CEFA69502352F6AA00455AB6 /* HomeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +163,12 @@
 		CEC3F7912351518500490A85 /* Weather AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE8E3EE32354B7D100F1B813 /* DetailPresenterTest.swift */,
+				CE8E3EE12354AFD100F1B813 /* HomePresenterTest.swift */,
+				CE8E3EDF2354AD0B00F1B813 /* DetailRouterTest.swift */,
+				CE8E3EDD2354ACFD00F1B813 /* HomeRouterTest.swift */,
+				CE3B1B2423548474009008DC /* DetailIneractorTest.swift */,
+				CEFA69502352F6AA00455AB6 /* HomeInteractorTest.swift */,
 				CEC3F7922351518500490A85 /* Weather_AppTests.swift */,
 				CEC3F7942351518500490A85 /* Info.plist */,
 			);
@@ -505,7 +523,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3B1B2523548474009008DC /* DetailIneractorTest.swift in Sources */,
+				CE8E3EE42354B7D100F1B813 /* DetailPresenterTest.swift in Sources */,
+				CE8E3EE02354AD0B00F1B813 /* DetailRouterTest.swift in Sources */,
+				CE8E3EDE2354ACFD00F1B813 /* HomeRouterTest.swift in Sources */,
+				CE8E3EE22354AFD100F1B813 /* HomePresenterTest.swift in Sources */,
 				CEC3F7932351518500490A85 /* Weather_AppTests.swift in Sources */,
+				CEFA69512352F6AA00455AB6 /* HomeInteractorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
