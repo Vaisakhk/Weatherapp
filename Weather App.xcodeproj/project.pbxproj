@@ -15,7 +15,6 @@
 		CEC3F7932351518500490A85 /* Weather_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7922351518500490A85 /* Weather_AppTests.swift */; };
 		CEC3F79E2351518500490A85 /* Weather_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F79D2351518500490A85 /* Weather_AppUITests.swift */; };
 		CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7DD2351563300490A85 /* AppDelegate.swift */; };
-		CEC3F7F42351563300490A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7DE2351563300490A85 /* SceneDelegate.swift */; };
 		CEC3F7F52351563300490A85 /* Weather_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7E02351563300490A85 /* Weather_App.xcdatamodeld */; };
 		CEC3F7F62351563300490A85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7E52351563300490A85 /* ViewController.swift */; };
 		CEC3F7F72351563300490A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC3F7ED2351563300490A85 /* LaunchScreen.storyboard */; };
@@ -74,7 +73,6 @@
 		CEC3F79D2351518500490A85 /* Weather_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_AppUITests.swift; sourceTree = "<group>"; };
 		CEC3F79F2351518500490A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC3F7DD2351563300490A85 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEC3F7DE2351563300490A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEC3F7E12351563300490A85 /* Weather_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather_App.xcdatamodel; sourceTree = "<group>"; };
 		CEC3F7E52351563300490A85 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEC3F7EE2351563300490A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC3F7DD2351563300490A85 /* AppDelegate.swift */,
-				CEC3F7DE2351563300490A85 /* SceneDelegate.swift */,
 			);
 			path = AppDelegates;
 			sourceTree = "<group>";
@@ -505,7 +502,6 @@
 				CEC3F8092351725200490A85 /* Utility.swift in Sources */,
 				CEC3F7F62351563300490A85 /* ViewController.swift in Sources */,
 				CEC3F820235231D900490A85 /* DetailViewController.swift in Sources */,
-				CEC3F7F42351563300490A85 /* SceneDelegate.swift in Sources */,
 				CEC3F80B2351729C00490A85 /* Constants.swift in Sources */,
 				CEC3F80223515BCA00490A85 /* HomeProtocol.swift in Sources */,
 				CEC3F7FF23515AD200490A85 /* HomeRouter.swift in Sources */,
