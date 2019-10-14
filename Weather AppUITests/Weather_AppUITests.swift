@@ -19,18 +19,12 @@ class Weather_AppUITests: XCTestCase {
     override func tearDown() {
     }
     
-    func testUI() {
-        
+    func testWeatherUI() {
         app.launch()
-        //        XCTAssertEqual(app.staticTexts.value as! String, "Please wait featching the result....")
+//        let isDisplayingOnboarding = app.otherElements["ProgressView"].exists
+//        XCTAssertTrue(isDisplayingOnboarding)
+//        XCTAssertEqual(app.staticTexts.element(boundBy: 0).value as! String, "Please wait featching the result....")
+        app.swipeLeft()
     }
     
-//    func testLaunchPerformance() {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-//                XCUIApplication().launch()
-//            }
-//        }
-//    }
 }

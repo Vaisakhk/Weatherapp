@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="Y7T-89-M5D" id="A0N-9F-eeC"/>
                         <outlet property="noDataLabel" destination="eKy-6t-3ui" id="uuv-lA-WAr"/>
+                        <outlet property="progressLabel" destination="Y49-Ta-jJZ" id="1XZ-H0-0UP"/>
                         <outlet property="progressView" destination="qDy-vv-MgF" id="YEw-2a-HhG"/>
                         <outlet property="searchBar" destination="gGv-pP-nAf" id="LWf-2d-Eqp"/>
                         <outlet property="tableView" destination="cLI-Y8-yjg" id="wKO-Qv-A86"/>

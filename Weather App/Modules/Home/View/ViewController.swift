@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressLabel: UILabel!
     
     var presenter:HomeViewToPresenterProtocol?
     lazy var dataArray : [SearchResult] = {
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        progressView.accessibilityIdentifier = "ProgressView"
+        progressLabel.accessibilityIdentifier = "ProgressLabel"
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = searchResult?.areaName
         presenter?.getWeatherReportData(by: searchResult?.areaName ?? "")
     }
 
