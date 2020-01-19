@@ -12,6 +12,7 @@
 		CE8E3EE02354AD0B00F1B813 /* DetailRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EDF2354AD0B00F1B813 /* DetailRouterTest.swift */; };
 		CE8E3EE22354AFD100F1B813 /* HomePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EE12354AFD100F1B813 /* HomePresenterTest.swift */; };
 		CE8E3EE42354B7D100F1B813 /* DetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E3EE32354B7D100F1B813 /* DetailPresenterTest.swift */; };
+		CEC1EEC9235B893400B7E3B4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1EEC8235B893300B7E3B4 /* HomeInteractor.swift */; };
 		CEC3F7932351518500490A85 /* Weather_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7922351518500490A85 /* Weather_AppTests.swift */; };
 		CEC3F79E2351518500490A85 /* Weather_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F79D2351518500490A85 /* Weather_AppUITests.swift */; };
 		CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7DD2351563300490A85 /* AppDelegate.swift */; };
@@ -22,7 +23,6 @@
 		CEC3F7F92351563300490A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC3F7F22351563300490A85 /* Assets.xcassets */; };
 		CEC3F7FF23515AD200490A85 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F7FE23515AD200490A85 /* HomeRouter.swift */; };
 		CEC3F80223515BCA00490A85 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80123515BCA00490A85 /* HomeProtocol.swift */; };
-		CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80323515BDB00490A85 /* HomeInteractor.swift */; };
 		CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80523515BF300490A85 /* HomePresenter.swift */; };
 		CEC3F8092351725200490A85 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F8082351725200490A85 /* Utility.swift */; };
 		CEC3F80B2351729C00490A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3F80A2351729C00490A85 /* Constants.swift */; };
@@ -64,6 +64,7 @@
 		CE8E3EDF2354AD0B00F1B813 /* DetailRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterTest.swift; sourceTree = "<group>"; };
 		CE8E3EE12354AFD100F1B813 /* HomePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTest.swift; sourceTree = "<group>"; };
 		CE8E3EE32354B7D100F1B813 /* DetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTest.swift; sourceTree = "<group>"; };
+		CEC1EEC8235B893300B7E3B4 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CEC3F7752351518100490A85 /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC3F7892351518500490A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC3F78E2351518500490A85 /* Weather AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +81,6 @@
 		CEC3F7F22351563300490A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC3F7FE23515AD200490A85 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		CEC3F80123515BCA00490A85 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
-		CEC3F80323515BDB00490A85 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CEC3F80523515BF300490A85 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		CEC3F8082351725200490A85 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		CEC3F80A2351729C00490A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 		CEC3F7FA23515AB600490A85 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				CEC3F80323515BDB00490A85 /* HomeInteractor.swift */,
+				CEC1EEC8235B893300B7E3B4 /* HomeInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -498,6 +498,7 @@
 				CEC3F8262352460E00490A85 /* DetailRouter.swift in Sources */,
 				CEC3F8242352460000490A85 /* DetailInteractor.swift in Sources */,
 				CEC3F8122352142400490A85 /* CoreDataHandler.swift in Sources */,
+				CEC1EEC9235B893400B7E3B4 /* HomeInteractor.swift in Sources */,
 				CEC3F7F32351563300490A85 /* AppDelegate.swift in Sources */,
 				CEC3F8092351725200490A85 /* Utility.swift in Sources */,
 				CEC3F7F62351563300490A85 /* ViewController.swift in Sources */,
@@ -508,7 +509,6 @@
 				CEC3F81A23522F3500490A85 /* CLAlertHandler.swift in Sources */,
 				CEC3F80D2351807400490A85 /* URLGenerator.swift in Sources */,
 				CEC3F8292352464A00490A85 /* DetailProtocol.swift in Sources */,
-				CEC3F80423515BDB00490A85 /* HomeInteractor.swift in Sources */,
 				CEC3F82B23524E4300490A85 /* WeatherResult.swift in Sources */,
 				CEC3F80623515BF300490A85 /* HomePresenter.swift in Sources */,
 				CEC3F822235245E800490A85 /* DetailPresenter.swift in Sources */,
